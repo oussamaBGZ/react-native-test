@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { VehicleContext } from '../context/VehicleContext';
 import VehicleCard from '../components/VehicleCard';
-import { Vehicle } from '../types';
+import { FilterData, Vehicle } from '../types';
 import FilterModal from '../components/FilterModel';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<any, 'Home'>;
@@ -27,25 +27,23 @@ const HomeScreen = () => {
     <VehicleCard vehicle={item} onPress={handleVehiclePress} />
   );
 
-  const handelFIlter = (data: any) => {
-    setFilters([]);
-    let filteredVehicles = state.vehicles;
+  const handleFilter = ({ make, model, minBid, maxBid }: FilterData) => {
+    const min = minBid ? parseFloat(minBid) : undefined;
+    const max = maxBid ? parseFloat(maxBid) : undefined;
 
-    if (data.make) {
-      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.make.toLowerCase().includes(data.make.toLowerCase()));
+    const filtered = state.vehicles.filter(v =>
+      (!make || v.make.toLowerCase().includes(make.toLowerCase())) &&
+      (!model || v.model.toLowerCase().includes(model.toLowerCase())) &&
+      (!min || (v.startingBid ?? 0) >= min) &&
+      (!max || (v.startingBid ?? 0) <= max)
+    );
+
+    if (filtered.length) setFilters(filtered);
+    else {
+      Alert.alert('No vehicles found with the applied filters');
+      setFilters([]);
     }
-    if (data.model) {
-      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.model.toLowerCase().includes(data.model.toLowerCase()));
-    }
-    if (data.minBid) {
-      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.startingBid && (vehicle.startingBid >= parseFloat(data.minBid)));
-    }
-    if (data.maxBid) {
-      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.startingBid && (vehicle.startingBid <= parseFloat(data.maxBid)));
-    }
-debugger;
-    filteredVehicles.length > 0 ? setFilters(filteredVehicles) : Alert.alert('No vehicles found with the applied filters');
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -61,7 +59,7 @@ debugger;
       <FilterModal
         visible={showModal}
         onClose={() => setShowModal(false)}
-        onApply={(data) => handelFIlter(data)}
+        onApply={(data) => handleFilter(data)}
       />
       <FlatList
         data={filters.length > 0 ? filters : state.vehicles}

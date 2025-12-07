@@ -63,8 +63,8 @@ export default function FilterModal({ visible, onClose, onApply }: FilterModalPr
                                     onApply({
                                         make,
                                         model,
-                                        minBid: minBid ? Number(minBid) : null,
-                                        maxBid: maxBid ? Number(maxBid) : null,
+                                        minBid: minBid ?? undefined,
+                                        maxBid: maxBid ?? undefined,
                                     });
                                     onClose();
                                 }}

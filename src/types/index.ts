@@ -11,16 +11,17 @@ export interface Vehicle {
   favourite: boolean;
 }
 
+export interface FilterData {
+  make?: string;
+  model?: string;
+  minBid?: string;
+  maxBid?: string;
+};
 
 export interface FilterModalProps {
   visible: boolean;
   onClose: () => void;
-  onApply: (filters: {
-    make: string;
-    model: string;
-    minBid: number | null;
-    maxBid: number | null;
-  }) => void;
+  onApply: (filters: FilterData) => void;
 }
 
 
