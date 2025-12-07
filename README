@@ -1,0 +1,18 @@
+# React Native Test
+
+This is a sample React Native project created using Expo CLI.
+
+## Prerequisites
+
+Before getting started, make sure you have the following installed:
+
+- Node.js (version 14.x or higher)
+- npm (version 6.x or higher)
+- Expo CLI (version 5.x or higher)
+
+## Installation
+
+1. Clone the repository:
+
+   ```shell
+   git clone [https://github.com/your-username/react-native-test.git](https://github.com/your-username/react-native-test.git)
