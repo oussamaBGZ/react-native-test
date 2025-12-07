@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "make": "Toyota",
+    "model": "C-HR",
+    "engineSize": "1.8L",
+    "fuel": "diesel",
+    "year": 2022,
+    "mileage": 743,
+    "auctionDateTime": "2025/04/15 09:00:00",
+    "startingBid": 17000,
+    "favourite": true
+  },
+  {
+    "id": "2",
+    "make": "Ford",
+    "model": "Fiesta",
+    "engineSize": "1.6L",
+    "fuel": "petrol",
+    "year": 2022,
+    "mileage": 9084,
+    "auctionDateTime": "2026/01/15 09:00:00",
+    "startingBid": 15000,
+    "favourite": false
+  },
+  {
+    "id": "3",
+    "make": "Toyota",
+    "model": "Corolla",
+    "engineSize": "1.6L",
+    "fuel": "diesel",
+    "year": 2020,
+    "mileage": 17293,
+    "auctionDateTime": "2026/01/09 09:00:00",
+    "startingBid": 15000,
+    "favourite": false
+  },
+  {
+    "id": "4",
+    "make": "Volkswagen",
+    "model": "Polo",
+    "engineSize": "1.6L",
+    "fuel": "petrol",
+    "year": 2019,
+    "mileage": 5025,
+    "auctionDateTime": "2026/04/15 09:00:00",
+    "startingBid": 17000,
+    "favourite": true
+  },
+  {
+    "id": "5",
+    "make": "Volkswagen",
+    "model": "Passat",
+    "engineSize": "1.6L",
+    "fuel": "petrol",
+    "year": 2021,
+    "mileage": 5384,
+    "auctionDateTime": "2026/04/25 09:00:00",
+    "startingBid": 20000,
+    "favourite": false
+  },
+  {
+    "id": "6",
+    "make": "Audi",
+    "model": "A4",
+    "engineSize": "1.6L",
+    "fuel": "petrol",
+    "year": 2020,
+    "mileage": 6375,
+    "auctionDateTime": "2026/03/05 09:00:00",
+    "startingBid": 16000,
+    "favourite": true
+  },
+  {
+    "id": "7",
+    "make": "Volvo",
+    "model": "V40",
+    "engineSize": "1.8L",
+    "fuel": "petrol",
+    "year": 2021,
+    "mileage": 4500,
+    "auctionDateTime": "2026/01/01 09:00:00",
+    "startingBid": 18000,
+    "favourite": true
+  }
+]
